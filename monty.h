@@ -42,4 +42,6 @@ typedef struct instruction_s
 int main(int argc, char* argv[]);
 void read_file(FILE* file);
 
+/*opfunk1*/
+void push(char* value);
 #endif /*MONTY_H*/
