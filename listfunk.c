@@ -52,15 +52,15 @@ void add_queue(stack_t **hamood, __attribute__((unused))unsigned  int line_n)
 */
 void free_node(void)
 {
-	stack_t *tmp;
+	stack_t *ptr;
 
 	if (head == NULL)
 		return;
 
 	while (head != NULL)
 	{
-		tmp = head;
+		ptr = head;
 		head = head->next;
-		free(tmp);
+		free(ptr);
 	}
 }
