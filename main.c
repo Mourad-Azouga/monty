@@ -76,22 +76,22 @@ int func_search(char* opcode, char* value, int count, int type)
     int i, ptr;
     instruction_t function_list[] = {
                     {"push", push},
-                    //{"pall", pall},
-		            //{"pint", pint},
-		            //{"pop", pop},
-		            //{"nop", nop},
+                    {"pall", pall},
+		            {"pint", pint},
+		            {"pop", pop},
+		            {"nop", nop},
 
-		            {"swap", swap},
-		            {"add", add},
-		            {"sub", sub},
-		            {"div", div},
-		            {"mul", mul},
+		           // {"swap", swap},
+		            //{"add", add},
+		            //{"sub", sub},
+		            //{"div", div},
+		            //{"mul", mul},
 
-		            {"mod", mod},
-		            {"pchar", pchar},
-		            {"pstr", pstr},
-		            {"rotl", rotl},
-            		{"rotr", rotr},
+		           // {"mod", mod},
+		           // {"pchar", pchar},
+		           // {"pstr", pstr},
+		           // {"rotl", rotl},
+            	//	{"rotr", rotr},
 		            {NULL, NULL},
     };
     if (opcode == "#")
