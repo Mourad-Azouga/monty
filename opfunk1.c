@@ -32,13 +32,12 @@ void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *ptr = *stack;
 
-	if (!stack || !*stack){
+	if (!stack || !*stack)
 		exit(EXIT_FAILURE);
-	}
-	if (!ptr) {
+	if (!ptr)
 		return;
-	}
-	while(ptr != NULL) {	
+	while(ptr != NULL)
+    {	
 		printf("%d\n", ptr->n);
 		ptr = ptr->next;
 	}

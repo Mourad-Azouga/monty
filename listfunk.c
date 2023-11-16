@@ -12,7 +12,8 @@ stack_t *create_new_node(int value, int sign)
     stack_t *new;
 
     new = malloc(sizeof(stack_t));
-    if (!new) {
+    if (!new)
+    {
         fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
@@ -30,16 +31,18 @@ void add_queue(stack_t **hamood, __attribute__((unused))unsigned  int line_n)
 {
     stack_t *ptr = *hamood;
 
-    if (!hamood || !*hamood) {
+    if (!hamood || !*hamood)
         exit(EXIT_FAILURE); 
-    }
-    if (!head){
+    if (!head)
         head = *hamood;
-    }
-    while (ptr->next != NULL) {
+    while (ptr->next != NULL)
+    {
         ptr = ptr->next;
     }
-    /*This means that the ptr is in the head which is where we want to add our first queue node so that when we pop we pop it at the head*/
+    /*
+    This means that the ptr is in the head which is
+    where we want to add our first queue node so that when we pop we pop it at the head
+    */
     (*hamood)->next = NULL;
     (*hamood)->prev = ptr;
     ptr->next = *hamood;

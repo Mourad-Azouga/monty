@@ -10,13 +10,15 @@ int main(int argc, char *argv[])
 {
 	FILE *read;
 
-	if (argc != 2) {
+	if (argc != 2)
+    {
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	/*Now we need to open the file in a read only manner*/
 	read = fopen(argv[1], "r");
-	if (!read) {
+	if (!read)
+    {
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
@@ -25,8 +27,10 @@ int main(int argc, char *argv[])
 	fclose(read);
 	return (0);
 }
-/**Now we read the file using getline so that we can send it to be
- * tokenized line by line then word by word*/
+/**
+ * Now we read the file using getline so that we can send it to be
+ * tokenized line by line then word by word
+ */
 /**
  * read_file - Reads the file and calls strtok to tokenize and stores
  * @file: the file pointer
@@ -43,13 +47,15 @@ void read_file(FILE *file)
 	}
 	free(buffer);
 }
-/**After taking each line we need to tokenize the input
- * so that we can get the opcode and the values*/
 /**
- * tokenizer - separates the line word by word 
+ * After taking each line we need to tokenize the input
+ * so that we can get the opcode and the values
+ */
+/**
+ * tokenizer - separates the line word by word
  * @line: the line
  * @type: initially 0 but this function will find out for sure
- * @count: the line number 
+ * @count: the line number
  * Return: it should return the type of the structure(stack or queue)
  */
 int tokenizer(char *line, int type, int count)
@@ -60,11 +66,13 @@ int tokenizer(char *line, int type, int count)
 	if (!opcode)
 		return (type);
 	value = strtok(NULL, "\n ");
-	if (strcmp(opcode, "stack") == 0) {
+	if (strcmp(opcode, "stack") == 0)
+    {
 		type = 0;
 		return (type);
 	}
-	if (strcmp(opcode, "queue") == 0) {
+	if (strcmp(opcode, "queue") == 0)
+    {
 		type = 1;
 		return (type);
 	}
@@ -87,14 +95,16 @@ int tokenizer(char *line, int type, int count)
 int func_search(char *opcode, char *value, int count, int type)
 {
 	int i;
-	instruction_t function_list[] = {
+	instruction_t function_list[] =
+    {
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
 		{"nop", nop},
 
-		/*{"swap", swap},
+		/*
+        {"swap", swap},
 		  {"add", add},
 		  {"sub", sub},
 		  {"div", div},
@@ -104,12 +114,12 @@ int func_search(char *opcode, char *value, int count, int type)
 		  {"pchar", pchar},
 		  {"pstr", pstr},
 		  {"rotl", rotl},
-		  {"rotr", rotr},*/
+		  {"rotr", rotr},
+          */
 		{NULL, NULL},
 	};
-	if (strcmp(opcode, "#") == 0) {
+	if (strcmp(opcode, "#") == 0)
 		return (0);
-	}
 
 	for (i = 0; function_list[i].opcode != NULL; i++)
 	{
@@ -130,7 +140,8 @@ int func_search(char *opcode, char *value, int count, int type)
  * @type: 1 stack 0 queue for pushing purposes
  * @line_n: line number
  */
-/**Why did we add push here if we were to make it
+/**
+ * Why did we add push here if we were to make it
  * work via the func_search? Good question,
  * It's because in the .h file we see that we can only
  * have as input stack and the line number
@@ -144,16 +155,20 @@ void magic(op_func funky, char *opcode, char *value, int type, int line_n)
     stack_t *head = NULL;
 	int sign = 1, i;
 	stack_t* hamood;
-	if (strcmp(opcode, "push") == 0) {
-		if (value && value[0] == '-') {
+	if (strcmp(opcode, "push") == 0)
+    {
+		if (value && value[0] == '-')
+        {
 			sign = -1;
 			value = value + 1; /*To remove the - character*/
 		}
-		if (!value){
+		if (!value)
+        {
 			fprintf(stderr, "L%d: usage: push integer", line_n);
 			exit(EXIT_FAILURE);
 		}
-		for (i = 0; value[i] != '\0'; i++) {
+		for (i = 0; value[i] != '\0'; i++)
+        {
 			if (isdigit(value[i]) == 0)
 			{
 				fprintf(stderr, "L%d: usage: push integer", line_n);
@@ -161,12 +176,10 @@ void magic(op_func funky, char *opcode, char *value, int type, int line_n)
 			}
 		}
 		hamood = create_new_node(atoi(value), sign);
-		if (type == 1)/*queue*/{
+		if (type == 1)/*queue*/
 			add_queue(&hamood, line_n);
-		}
-		if (type == 0)/*stack*/{
+		if (type == 0)/*stack*/
 			funky(&hamood, line_n);
-		}
 	}
 	else
 	{
