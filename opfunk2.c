@@ -43,3 +43,22 @@ void add(stack_t **stack, unsigned int line_number)
     free((*stack)->prev);
     (*stack)->prev = NULL;
 }
+/**
+ * sub - adds the data ins together
+ * @stack: the stacky stack
+ * @line_count: you know it already
+*/
+void sub(stack_t **stack, unsigned int line_number)
+{
+    int sum = 0;
+   if (!stack || !*stack ||(*stack)->next == NULL)
+    {
+        fprintf(stderr, "L%d: can't sub, stack too short", line_number);
+        exit(EXIT_FAILURE);
+    }
+    (*stack) = (*stack)->next;
+    sum =(*stack)->n - (*stack)->prev->n;
+    (*stack)->n = sum;
+    free((*stack)->prev);
+    (*stack)->prev = NULL;
+}
