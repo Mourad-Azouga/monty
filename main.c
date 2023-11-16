@@ -74,6 +74,7 @@ int tokenize(char* line, int type, int count)
 int func_search(char* opcode, char* value, int count, int type)
 {
     int i, ptr;
+    stack_t *stack = NULL;
     instruction_t function_list[] = {
                     {"push", push},
                     {"pall", pall},
@@ -101,7 +102,7 @@ int func_search(char* opcode, char* value, int count, int type)
     {
         if (strcmp(opcode, function_list[i].opcode) == 0)
         {
-            function_list[i].f(NULL, count); // Assuming the functions take two arguments (value is NULL here)
+            function_list[i].f(&stack, count); // Assuming the functions take two arguments (value is NULL here)
             return (1);
         }
     }
