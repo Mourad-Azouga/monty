@@ -7,7 +7,7 @@
 */
 void push(stack_t **stack, unsigned int line_number)
 {
-printf("11");
+printf("You made it work! this is for the stack");
 (void) stack;
 (void) line_number;
 }/**

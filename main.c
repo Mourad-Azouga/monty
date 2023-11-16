@@ -1,4 +1,6 @@
 #include "monty.h"
+stack_t* head = NULL;
+
 /**
  * main - the main program that'll run everything else
  * @argc: the number of arguments needs to be 2
@@ -148,10 +150,10 @@ void magic(op_func funky, char* opcode, char* value, int type, int line_n)
                 }
         }
         hamood = create_new_node(atoi(value), sign);
-        if (type == 0)/*queue*/{
+        if (type == 1)/*queue*/{
             add_queue(&hamood, line_n);
         }
-        if (type == 1)/*stack*/{
+        if (type == 0)/*stack*/{
             funky(&hamood, line_n);
         }
     }

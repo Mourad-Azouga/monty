@@ -27,6 +27,8 @@ stack_t* create_new_node(int value, int sign)
 void add_queue(stack_t** hamood, __attribute__((unused))unsigned  int line_n)
 {
     stack_t *ptr = *hamood;
+
+    printf("you made it work! this is for queue");
     if (!hamood || !*hamood){
         exit(EXIT_FAILURE); 
     }
