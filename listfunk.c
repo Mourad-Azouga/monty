@@ -29,6 +29,7 @@ stack_t *create_new_node(int value, int sign)
 */
 void add_queue(stack_t **hamood, __attribute__((unused))unsigned  int line_n)
 {
+    stack_t *head = NULL;
     stack_t *ptr = *hamood;
 
     if (!hamood || !*hamood)
@@ -52,6 +53,7 @@ void add_queue(stack_t **hamood, __attribute__((unused))unsigned  int line_n)
 */
 void free_node(void)
 {
+    stack_t *head = NULL;
 	stack_t *ptr;
 
 	if (head == NULL)
