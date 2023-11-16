@@ -1,24 +1,46 @@
 #include "monty.h"
 /*This will host push, pall, pint, pop and nop*/
 /**
- * push - adds new elements to the stack/queue
+ * push - adds new elements to the stack
  * @stack: the list head
  * @line_number: the line number
 */
 void push(stack_t **stack, unsigned int line_number)
 {
-printf("You made it work! this is for the stack");
-(void) stack;
-(void) line_number;
-}/**
- * pall - prints all I guess
+    stack_t *ptr = *stack;
+
+    if (!stack || !*stack){
+        exit(EXIT_FAILURE); 
+    }
+    if (!head){
+        head = *stack;
+    }
+    while (ptr->next != NULL){
+        ptr = ptr->next;
+    }
+    (*stack)->next = NULL;
+    (*stack)->prev = ptr->prev;
+}
+/**
+ * pall - prints all FROM THE TOP WHICH MEANS LAST ELEMENT ADDED FOR THE STACK AND FIRST FOR THE QUEUE
  * @stack: the list head
  * @line_number: the line number
 */
 void pall(stack_t **stack, unsigned int line_number)
 {
-(void) stack;
-(void) line_number;
+    stack_t *ptr = *stack;
+    if (!stack || !*stack){
+        exit(EXIT_FAILURE);
+    }
+    if (!ptr){
+        return;
+    }
+    while (ptr->prev != NULL){
+        ptr = ptr->prev; /*this should set the ptr at the head*/
+    }
+    for (; ptr != NULL; ptr = ptr->next){
+        printf("%d\n", ptr->n);
+    }
 }
 /**
  * pint - print int 
