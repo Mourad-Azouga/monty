@@ -7,26 +7,19 @@
 */
 void push(stack_t **new_node, __attribute__((unused)) unsigned int ln)
 {
-    stack_t *tmp;
+		stack_t *tmp;
 
-    if (new_node == NULL || *new_node == NULL)
-        exit(EXIT_FAILURE);
-    
-    if (head == NULL)
-    {
-        head = *new_node;
-        return;
-    }
-
-    tmp = head;
-    while (tmp->next != NULL)
-    {
-        tmp = tmp->next;
-    }
-
-    tmp->next = *new_node;
-    (*new_node)->prev = tmp;
-    (*new_node)->next = NULL;
+	if (new_node == NULL || *new_node == NULL)
+		exit(EXIT_FAILURE);
+	if (head == NULL)
+	{
+		head = *new_node;
+		return;
+	}
+	tmp = head;
+	head = *new_node;
+	head->next = tmp;
+	tmp->prev = head;
 }
 
 /**
@@ -43,7 +36,6 @@ void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
     if (!ptr){
         return;
     }
-    printf("what's the value of ptr->n in the head before the while? %d\n", ptr->n);
 	while(ptr != NULL){	
     	printf("%d\n", ptr->n);
 	    ptr = ptr->next;

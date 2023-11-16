@@ -35,10 +35,11 @@ void add_queue(stack_t** hamood, __attribute__((unused))unsigned  int line_n)
     if (!head){
         head = *hamood;
     }
-    while (ptr->prev != NULL){
-        ptr = ptr->prev;
+    while (ptr->next != NULL){
+        ptr = ptr->next;
     }
     /*This means that the ptr is in the head which is where we want to add our first queue node so that when we pop we pop it at the head*/
-    (*hamood)->next = ptr->next;
-    (*hamood)->prev = NULL;
+    (*hamood)->next = NULL;
+    (*hamood)->prev = ptr;
+    ptr->next = *hamood;
 }
