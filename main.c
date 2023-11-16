@@ -134,7 +134,7 @@ void magic(op_func funky, char* opcode, char* value, int type, int line_n)
     int sign = 1, i;
     stack_t* hamood;
     if (strcmp(opcode, "push") == 0){
-        if (value || value[0] == '-'){
+        if (value && value[0] == '-'){
             sign = -1;
             value = value + 1; /*To remove the - character*/
         }

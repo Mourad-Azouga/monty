@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /*This is to handle list dunctions create new node*/
 /**
  * create_new_node - Creates a new node that isn't linked to anything
@@ -28,7 +29,6 @@ void add_queue(stack_t** hamood, __attribute__((unused))unsigned  int line_n)
 {
     stack_t *ptr = *hamood;
 
-    printf("you made it work! this is for queue");
     if (!hamood || !*hamood){
         exit(EXIT_FAILURE); 
     }

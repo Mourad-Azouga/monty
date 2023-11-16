@@ -40,7 +40,7 @@ void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
     }
 	while(ptr != NULL){	
     printf("atleast it reached here?");
-    	    printf("%d\n", ptr->n);
+    	printf("%d\n", ptr->n);
 	    ptr = ptr->next;
     }
 }
