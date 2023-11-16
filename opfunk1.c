@@ -5,22 +5,30 @@
  * @stack: the list head
  * @line_number: the line number
 */
-void push(stack_t **stack,  __attribute__((unused)) unsigned int line_number)
+void push(stack_t **new_node, __attribute__((unused)) unsigned int ln)
 {
-    stack_t *ptr = *stack;
+    stack_t *tmp;
 
-    if (!stack || !*stack){
-        exit(EXIT_FAILURE); 
+    if (new_node == NULL || *new_node == NULL)
+        exit(EXIT_FAILURE);
+    
+    if (head == NULL)
+    {
+        head = *new_node;
+        return;
     }
-    if (!head){
-        head = *stack;
+
+    tmp = head;
+    while (tmp->next != NULL)
+    {
+        tmp = tmp->next;
     }
-    while (ptr->next != NULL){
-        ptr = ptr->next;
-    }
-    (*stack)->next = NULL;
-    (*stack)->prev = ptr->prev;
+
+    tmp->next = *new_node;
+    (*new_node)->prev = tmp;
+    (*new_node)->next = NULL;
 }
+
 /**
  * pall - prints all FROM THE TOP WHICH MEANS LAST ELEMENT ADDED FOR THE STACK AND FIRST FOR THE QUEUE
  * @stack: the list head
@@ -28,15 +36,12 @@ void push(stack_t **stack,  __attribute__((unused)) unsigned int line_number)
 */
 void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-    stack_t *ptr = head;
+    stack_t *ptr = *stack;
     if (!stack || !*stack){
         exit(EXIT_FAILURE);
     }
     if (!ptr){
         return;
-    }
-    while (ptr->prev != NULL){
-        ptr = ptr->prev; /*this should set the ptr at the head*/
     }
     printf("what's the value of ptr->n in the head before the while? %d\n", ptr->n);
 	while(ptr != NULL){	

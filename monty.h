@@ -53,7 +53,7 @@ int func_search(char* opcode, char* value, int count, int type);
 void magic(op_func funky, char* opcode, char* value, int type, int line_n);
 
 /*opfunk1*/
-void push(stack_t **stack, unsigned int line_number);
+void push(stack_t **new_node, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
