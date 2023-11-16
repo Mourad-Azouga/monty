@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
         exit(EXIT_FAILURE);
     }
     read_file(read);
-    free_nodes();
+    free_node();
     fclose(read);
     return (0);
 }
