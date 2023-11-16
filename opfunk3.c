@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * - does the magic stuffies
+ * modus- computes the rest of the division same as div
  * @stack: the pizza stack
  * @line_number: the number to call for the pizza
 */
@@ -9,7 +9,7 @@ void modus(stack_t **stack, unsigned int line_number)
 
 }
 /**
- * - does the magic stuffies
+ * pchar - prints char i guess
  * @stack: the pizza stack
  * @line_number: the number to call for the pizza
 */
@@ -19,7 +19,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * - does the magic stuffies
+ * pstr - prints the string 
  * @stack: the pizza stack
  * @line_number: the number to call for the pizza
 */
@@ -29,7 +29,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * - does the magic stuffies
+ * rotl - does the magic stuffies
  * @stack: the pizza stack
  * @line_number: the number to call for the pizza
 */
@@ -38,7 +38,7 @@ void rotl(stack_t **stack, unsigned int line_number)
 
 }
 /**
- * - does the magic stuffies
+ * rotr - does the magic stuffies but to the right
  * @stack: the pizza stack
  * @line_number: the number to call for the pizza
 */
