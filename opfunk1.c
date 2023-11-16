@@ -28,7 +28,7 @@ void push(stack_t **stack,  __attribute__((unused)) unsigned int line_number)
 */
 void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-    stack_t *ptr = *stack;
+    stack_t *ptr = head;
     if (!stack || !*stack){
         exit(EXIT_FAILURE);
     }
@@ -38,8 +38,8 @@ void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
     while (ptr->prev != NULL){
         ptr = ptr->prev; /*this should set the ptr at the head*/
     }
+    printf("what's the value of ptr->n in the head before the while? %d\n", ptr->n);
 	while(ptr != NULL){	
-    printf("atleast it reached here?");
     	printf("%d\n", ptr->n);
 	    ptr = ptr->next;
     }
