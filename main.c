@@ -107,18 +107,19 @@ int func_search(char *opcode, char *value, int count, int type)
 		  {"sub", sub},
 		  {"div", div},
 		  {"mul", mul},
-/*
-		  {"mod", mod},
+		  {"mod", modus},
 		  {"pchar", pchar},
 		  {"pstr", pstr},
 		  {"rotl", rotl},
 		  {"rotr", rotr},
-          */
 		{NULL, NULL},
 	};
 	if (strcmp(opcode, "#") == 0)
+	{
+		free_node();
 		return (0);
-
+	}
+		
 	for (i = 0; function_list[i].opcode != NULL; i++)
 	{
 		if (strcmp(opcode, function_list[i].opcode) == 0)
