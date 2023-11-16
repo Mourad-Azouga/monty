@@ -21,6 +21,7 @@ int main(int argc, char* argv[])
         exit(EXIT_FAILURE);
     }
     read_file(read);
+    free_nodes();
     fclose(read);
     return (0);
 }
@@ -107,7 +108,6 @@ int func_search(char* opcode, char* value, int count, int type)
 
         for (i = 0; function_list[i].opcode != NULL; i++)
     {
-	    
         if (strcmp(opcode, function_list[i].opcode) == 0)
         {
             magic(function_list[i].f, opcode, value, type, count);

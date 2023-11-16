@@ -44,6 +44,7 @@ typedef void (*op_func)(stack_t **, unsigned int);
 
 /*listfunk.c*/
 stack_t* create_new_node(int value, int sign);
+void free_node(void);
 void add_queue(stack_t** hamood, __attribute__((unused))unsigned  int line_n);
 /*main.c*/
 int main(int argc, char* argv[]);

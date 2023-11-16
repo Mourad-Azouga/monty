@@ -43,3 +43,20 @@ void add_queue(stack_t** hamood, __attribute__((unused))unsigned  int line_n)
     (*hamood)->prev = ptr;
     ptr->next = *hamood;
 }
+/**
+ * free_node - frees the entire thing when we are done
+*/
+void free_node(void)
+{
+	stack_t *tmp;
+
+	if (head == NULL)
+		return;
+
+	while (head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+}
