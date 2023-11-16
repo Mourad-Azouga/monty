@@ -105,10 +105,9 @@ int func_search(char *opcode, char *value, int count, int type)
         {"swap", swap},
 		{"add", add},
 		  {"sub", sub},
-		  {"div", div},
-		  {"mul", mul},
-/*
-		  {"mod", mod},
+		  {"div", divi},
+		  {"mul", muli},
+		  {"mod", modus},
 		  {"pchar", pchar},
 		  {"pstr", pstr},
 		  {"rotl", rotl},
