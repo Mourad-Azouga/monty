@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     /*Now we need to open the file in a read only manner*/
     read = fopen(argv[1],"r");
     if (!read){
-        fprintf(stderr,"Error: Can't open file %s", argv[1]);
+        fprintf(stderr,"Error: Can't open file %s\n", argv[1]);
         exit(EXIT_FAILURE);
     }
     read_file(read);

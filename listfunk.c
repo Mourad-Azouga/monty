@@ -12,7 +12,7 @@ stack_t* create_new_node(int value, int sign)
     stack_t *new;
     new = malloc(sizeof(stack_t));
     if (!new){
-        fprintf(stderr, "Malloc error");
+        fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
     new->n = value * sign;
