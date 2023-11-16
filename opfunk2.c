@@ -67,7 +67,7 @@ void sub(stack_t **stack, unsigned int line_number)
  * @stack: the stacky stack
  * @line_count: you know it already
 */
-void div(stack_t **stack, unsigned int line_number)
+void divi(stack_t **stack, unsigned int line_number)
 {
     int divoja = 0;
    if (!stack || !*stack ||(*stack)->next == NULL)
@@ -92,7 +92,7 @@ void div(stack_t **stack, unsigned int line_number)
  * @stack: the stacky stack
  * @line_count: you know it already
 */
-void mul(stack_t **stack, unsigned int line_number)
+void muli(stack_t **stack, unsigned int line_number)
 {
     int mulholand= 0;
    if (!stack || !*stack ||(*stack)->next == NULL)
