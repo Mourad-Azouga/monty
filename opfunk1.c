@@ -5,7 +5,7 @@
  * @stack: the list head
  * @line_number: the line number
 */
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack,  __attribute__((unused)) unsigned int line_number)
 {
     stack_t *ptr = *stack;
 
@@ -26,7 +26,7 @@ void push(stack_t **stack, unsigned int line_number)
  * @stack: the list head
  * @line_number: the line number
 */
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
     stack_t *ptr = *stack;
     if (!stack || !*stack){
@@ -38,8 +38,10 @@ void pall(stack_t **stack, unsigned int line_number)
     while (ptr->prev != NULL){
         ptr = ptr->prev; /*this should set the ptr at the head*/
     }
-    for (; ptr != NULL; ptr = ptr->next){
-        printf("%d\n", ptr->n);
+	while(ptr != NULL){	
+    printf("atleast it reached here?");
+    	    printf("%d\n", ptr->n);
+	    ptr = ptr->next;
     }
 }
 /**
