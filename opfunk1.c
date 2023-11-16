@@ -7,15 +7,18 @@
 */
 void push(stack_t **stack, unsigned int line_number)
 {
-printf("Value %s number %li\n", stack, line_number);}
-/**
+printf("11");
+(void) stack;
+(void) line_number;
+}/**
  * pall - prints all I guess
  * @stack: the list head
  * @line_number: the line number
 */
 void pall(stack_t **stack, unsigned int line_number)
 {
-    printf("Value %s number %li\n", stack, line_number);
+(void) stack;
+(void) line_number;
 }
 /**
  * pint - print int 
@@ -24,7 +27,8 @@ void pall(stack_t **stack, unsigned int line_number)
 */
 void pint(stack_t **stack, unsigned int line_number)
 {
-printf("Value %s number %li\n", stack, line_number);
+(void) stack;
+(void) line_number;
 }
 /**
  * pop
@@ -33,7 +37,8 @@ printf("Value %s number %li\n", stack, line_number);
 */
 void pop(stack_t **stack, unsigned int line_number)
 {
-printf("Value %s number %li\n", stack, line_number);
+(void) stack;
+(void) line_number;
 }
 /**
  * nop - does nothing
@@ -42,5 +47,6 @@ printf("Value %s number %li\n", stack, line_number);
 */
 void nop(stack_t **stack, unsigned int line_number)
 {
-printf("Value %s number %li\n", stack, line_number);
+(void) stack;
+(void) line_number;
 }

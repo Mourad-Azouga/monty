@@ -24,7 +24,7 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
-
+extern stack_t* head;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -38,9 +38,19 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+typedef void (*op_func)(stack_t **, unsigned int);
+
+
+/*listfunk.c*/
+stack_t* create_new_node(int value, int sign);
+void add_queue(stack_t** hamood, __attribute__((unused))unsigned  int line_n);
 /*main.c*/
 int main(int argc, char* argv[]);
 void read_file(FILE* file);
+int tokenizer(char* line, int type, int count);
+int func_search(char* opcode, char* value, int count, int type);
+void magic(op_func funky, char* opcode, char* value, int type, int line_n);
 
 /*opfunk1*/
 void push(stack_t **stack, unsigned int line_number);
