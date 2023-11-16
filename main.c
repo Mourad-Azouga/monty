@@ -1,5 +1,5 @@
 #include "monty.h"
-
+stack_t *head = NULL;
 /**
  * main - the main program that'll run everything else
  * @argc: the number of arguments needs to be 2
@@ -152,7 +152,6 @@ int func_search(char *opcode, char *value, int count, int type)
  */
 void magic(op_func funky, char *opcode, char *value, int type, int line_n)
 {
-    stack_t *head = NULL;
 	int sign = 1, i;
 	stack_t* hamood;
 	if (strcmp(opcode, "push") == 0)
